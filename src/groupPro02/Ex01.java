@@ -122,10 +122,11 @@ public class Ex01 {
 			//
 		
 //		서정원--------------------
-//		총 이용 횟수
-//
-//		교통수단별 이용 횟수 출력
-//
+		System.out.println("지하철 이용횟수: "+s_count);
+		System.out.println("버스 이용횟수: "+b_count);
+		count=b_count+s_count;
+		System.out.println("총 교통수단 이용횟수: "+count);
+		
 		
 		
 //		김진옥------------------------
