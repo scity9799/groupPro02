@@ -33,6 +33,7 @@ public class Ex01 {
 		int b_count =0; // 버스 이용횟수 
 		int s_count =0; // 지하철 이용횟수
 		int age = 0; //나이 
+		String sAge = ""; //아동, 청소년, 성인 저장할 변수
 		
 		int total = 0; //총 요금 
 		double avg = 0; //평균 요금
@@ -46,6 +47,16 @@ public class Ex01 {
 //		조건식 사용(if) => 12세 미만이면 아동
 //				12세 이상 19세 이하이면 청소년
 //				20세 이상이면 성인
+	      if (age >= 0) {
+	          if (age >= 0 && age < 12) {
+	             sAge = "아동";
+	          } else if(age >=12 && age < 19) {
+	             sAge = "청소년";
+	          } else {
+	             sAge = "성인";
+	          }
+	       }
+	      System.out.println(sAge + "입니다.");
 		
 //		이해준---------------------------------------
 //		프로그램 시작합니다. (출력)
