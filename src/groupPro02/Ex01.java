@@ -84,6 +84,8 @@ public class Ex01 {
 			System.out.println("대중교통 선택");
 			System.out.println("1. 버스");
 			System.out.println("2. 지하철");
+			System.out.println("3. 정보창");
+			System.out.println("그 외 입력시 종료");
 			System.out.println("번호 입력 : ");
 			int choice = sc.nextInt();
 
@@ -146,7 +148,8 @@ public class Ex01 {
 				System.out.println("이용해주셔서 감사합니다");
 				cheack = false;
 				
-			}//switch문 
+			}//switch문
+			count=b_count+s_count;
 		}//while문끝
 			
 		
@@ -154,7 +157,6 @@ public class Ex01 {
 //		서정원--------------------
 		System.out.println("지하철 이용횟수: "+s_count);
 		System.out.println("버스 이용횟수: "+b_count);
-		count=b_count+s_count;
 		System.out.println("총 교통수단 이용횟수: "+count);
 		
 		
