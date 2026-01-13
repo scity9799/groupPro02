@@ -118,8 +118,30 @@ public class Ex01 {
 				mileageCount[mileageIndex] = SUBWAY[s_count]; // 탄 순서대로 지하철 요금 저장 
 				mileageIndex++; 
 				s_count++;
-				
 				break;
+		//서정원------------------------------------------------------------
+			case 3:
+				while(choice!=0) {
+					System.out.println("====현재까지 정보====");
+					System.out.println("확인하고 싶으신 정보를 고르세요");
+					System.out.println("1. 각 교통수단별 및 총 이용횟수");
+					System.out.println("2. 현재 사용자 정보");
+					System.out.println("3. 현재 각 교통수단별 금액");
+					System.out.println("0. 돌아가기");
+					choice = sc.nextInt();
+					switch(choice){
+					case 1: System.out.println("현재까지 버스는 "+b_count+"회 이용하셨으며 지하철은 "+s_count+"회 이용하셨습니다\n총 교통수단 이용 횟수는: "+count+"회 입니다");break;
+					case 2:	if(sAge.equals("아동")) {System.out.println("현재 사용자는"+sAge+"이므로 교통비 무료 대상자입니다");}
+							else if (sAge.equals("청소년")){System.out.println("현재 사용자는 "+sAge+"이므로 교통비"+(DISCOUNT_RATE*100)+"% 할인 대상자 입니다.");}
+							else if(sAge.equals("성인")){System.out.println("현재 사용자는"+sAge+"이므로 나이 할인 대상자가 아닙니다.");}
+							break;
+					case 3: System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
+					case 0: System.out.println("정보창을 종료합니다");break;
+					default: System.out.println("잘못된 입력입니다 다시 입력해 주세요");break;
+					}
+				}
+				break;
+		//----------------------------------------
 			default : 
 				System.out.println("이용해주셔서 감사합니다");
 				cheack = false;
@@ -188,7 +210,6 @@ public class Ex01 {
 	      //구간 금액 누적합 
 	      for(int i =0; i <mileagenum2; i++) { // 마일리지 배열에 저장된 길이 
 	    	  mileageTotal +=mileageCount[i];
-	    	  
 	    	  
 	      }
 	      //0.5 퍼센트 할인율 적용 
