@@ -77,10 +77,14 @@ public class Ex01 {
 		
 		boolean cheack = true;
 		while(cheack) {//while문 시작
-			System.out.println("탑승한 대중교통 : ");
-			String transpotation = sc.nextLine();
-			switch(transpotation) {//switch문 시작
-			case "BUS" :
+			System.out.println("대중교통 선택");
+			System.out.println("1. 버스");
+			System.out.println("2. 지하철");
+			System.out.println("번호 입력 : ");
+			int choice = sc.nextInt();
+
+			switch(choice) {//switch문 시작
+			case 1 :
 				if(sAge.equals("아동")) {
 				BUS[b_count] = 0;
 			}else if (sAge.equals("청소년")){
@@ -96,7 +100,7 @@ public class Ex01 {
 //
 //		- 지하철일때()
 //switch(transpotation) {
-			case "SUBWAY" :
+			case 2 :
 				if(sAge.equals("아동")) {
 					SUBWAY[s_count] = 0;
 			}else if (sAge.equals("청소년")){
