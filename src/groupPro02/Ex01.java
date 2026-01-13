@@ -80,7 +80,7 @@ public class Ex01 {
 //		첫 사용 시 첫 번째 배열에 저장
 		
 		boolean cheack = true;                       
-		while(cheack) {//while문 시작
+		while(cheack) {// while문 시작
 			System.out.println("대중교통 선택");
 			System.out.println("1. 버스");
 			System.out.println("2. 지하철");
@@ -92,9 +92,9 @@ public class Ex01 {
 			switch(choice) {//switch문 시작
 			case 1 :
 				if(sAge.equals("아동")) {
-				BUS[b_count] = 0;
+				BUS[b_count] = 0;//bus이용횟수당 체크되는 금액 0원 << 공짜니깐
 			}else if (sAge.equals("청소년")){
-				BUS[b_count] = (int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE));
+				BUS[b_count] = (int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE));//배열int타입 맞춰줌
 			}else if(sAge.equals("성인")){
 				BUS[b_count] = BUS_PRICE;
 			}
@@ -108,22 +108,22 @@ public class Ex01 {
 //		김태우-------------------------------------
 //
 //		- 지하철일때()
-//switch(transpotation) {
+//switch(transpotation)<<<<<<머였던 거지? 차피 안쓰는 코드라 주석처리로 받긴함 무시하겠음
+// 입력방식을 바꿔볼 수 있을까? 난 삼항연산자 쓰겠음 if문 switch문 다 위에서 썻으니...
 			case 2 :
-				if(sAge.equals("아동")) {
-					SUBWAY[s_count] = 0;
-			}else if (sAge.equals("청소년")){
-				SUBWAY[s_count] = (int)(SUBWAY_PRICE - (SUBWAY_PRICE * DISCOUNT_RATE));
-			}else if(sAge.equals("성인")){
-				SUBWAY[s_count] = SUBWAY_PRICE;
-			}
+				SUBWAY[s_count] =
+				age >= 0 && age < 12 ? 0 ://12살이상일때가 거짓문밑에있음
+					age >= 12 && age < 19 ? (int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE)) ://19살이상일때 거짓문밑에
+						age >= 19 ? SUBWAY_PRICE :SUBWAY_PRICE ;//참도 거짓도 결과는 정해져있음.ㅋ
+				
 				mileageCount[mileageIndex] = SUBWAY[s_count]; // 탄 순서대로 지하철 요금 저장 
 				mileageIndex++; 
 				s_count++;
 				break;
+
 		//서정원------------------------------------------------------------
 			case 3:
-				while(choice!=0) {
+				while(choice!=0) {//switch문의 case3의 while문 시작
 					System.out.println("====현재까지 정보====");
 					System.out.println("확인하고 싶으신 정보를 고르세요");
 					System.out.println("1. 각 교통수단별 및 총 이용횟수");
@@ -137,18 +137,34 @@ public class Ex01 {
 							else if (sAge.equals("청소년")){System.out.println("현재 사용자는 "+sAge+"이므로 교통비"+(DISCOUNT_RATE*100)+"% 할인 대상자 입니다.");}
 							else if(sAge.equals("성인")){System.out.println("현재 사용자는"+sAge+"이므로 나이 할인 대상자가 아닙니다.");}
 							break;
-					case 3: System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
+					case 3: 
+						//김태우------------------------------------
+						//정원이가 작성한 코드
+						//System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
+						//이거 기반으로 해당 나이에 맞는 금액 알려주도록만 수정함
+						//나이대가 다르게 입력된채로 정보창에 들어왔는데 금액이 다 똑같이 알려주길래
+						//사용자의 정보에 맞는 금액 얼마인지 알수 있게끔만함
+						if(sAge.equals("아동")) {
+							System.out.println("현재 교통수단별 금액은\n버스: 0원\n지하철: 0원 으로 설정되어 있습니다");break;
+						}else if (sAge.equals("청소년")){
+							System.out.println("현재 교통수단별 금액은\n버스: "+(int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE))+"원\n"
+									+ "지하철: "+(int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE))+"원 으로 설정되어 있습니다");break;
+						}else if(sAge.equals("성인")){
+							System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
+						}
+					
 					case 0: System.out.println("정보창을 종료합니다");break;
 					default: System.out.println("잘못된 입력입니다 다시 입력해 주세요");break;
 					}
-				}
+				}//switch문의 case3의 while문 끝
 				break;
-		//----------------------------------------
+		//김태우----------------------------------------
+		//while문 탈출할거얌.
 			default : 
 				System.out.println("이용해주셔서 감사합니다");
 				cheack = false;
-				
-			}//switch문
+				break;
+			}//switch문끝
 			count=b_count+s_count;
 		}//while문끝
 			
@@ -167,14 +183,12 @@ public class Ex01 {
 //		평균요금
 //			
 	      // 김진옥 
-	    int b_total = 0; // 총요금 
 		// 반복문을 사용해서 값을 꺼내고 요금 토탈값 구하기0.
 		  for (int i = 0 ; i <= s_count-1 ; i++) {
 		     
 		         total += SUBWAY[i];
 		      }
 		  
-		  int s_total = 0;
 		  for (int i = 0 ; i <= b_count-1 ; i++) {
 		         
 		         total += BUS[i];
