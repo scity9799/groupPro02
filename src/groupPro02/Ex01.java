@@ -133,7 +133,42 @@ public class Ex01 {
 //		결제된 총 요금
 //
 //		평균요금
-//		
+//			
+	      // 김진옥 
+	    int b_total = 0;
+		// 반복문을 사용해서 값을 꺼내고 요금 토탈값 구하기0.
+		  for (int i = 0 ; i <= s_count-1 ; i++) {
+		     
+		         total += SUBWAY[i];
+		      }
+		  
+		  int s_total = 0;
+		  for (int i = 0 ; i <= b_count-1 ; i++) {
+		         
+		         total += BUS[i];
+		      }
+		  
+	      // 1. 결제된 총 요금 출력
+	      // (앞선 반복문에서 total 변수에 요금이 계속 누적되었다고 가정)
+	      System.out.println("결제된 총 요금 : " + total + "원");
+
+	      // 2. 평균 요금 계산
+	      // 총 요금 / 총 이용 횟수
+	      //  이용 횟수가 0번일 때 나누면 에러가 나므로 조건문으로 확인해야 함
+	      
+	       
+
+	      if (count > 0) {
+	         // 정수 나누기 정수는 정수가 되므로, (double)로 형변환하여 소수점까지 계산
+	         avg = (double) total / count;
+	      }
+
+	      // 3. 평균 요금 출력
+	      // 실수로 출력 
+	 System.out.printf("평균 요금 : %.2f원\n", avg);
+
+	      System.out.println("이용해 주셔서 감사합니다.");
+		
 		
 	
 }
