@@ -74,10 +74,12 @@ public class Ex01 {
 //		교통수단 별 이용횟수(switch)
 //		- 버스일때()
 //		첫 사용 시 첫 번째 배열에 저장
-		while(true) {
+		
+		boolean cheack = true;
+		while(cheack) {//while문 시작
 			System.out.println("탑승한 대중교통 : ");
 			String transpotation = sc.nextLine();
-			switch(transpotation) {
+			switch(transpotation) {//switch문 시작
 			case "BUS" :
 				if(sAge.equals("아동")) {
 				BUS[b_count] = 0;
@@ -87,14 +89,37 @@ public class Ex01 {
 				BUS[b_count] = BUS_PRICE;
 			}
 				b_count++;
-		}
+				break;
+		
 		
 //		김태우-------------------------------------
 //
 //		- 지하철일때()
-//
-//
+//switch(transpotation) {
+			case "SUBWAY" :
+				if(sAge.equals("아동")) {
+					SUBWAY[s_count] = 0;
+			}else if (sAge.equals("청소년")){
+				SUBWAY[s_count] = (int)(SUBWAY_PRICE - (SUBWAY_PRICE * DISCOUNT_RATE));
+			}else if(sAge.equals("성인")){
+				SUBWAY[s_count] = SUBWAY_PRICE;
+			}
+				s_count++;
+				
+				
+				break;
+			default : 
+				System.out.println("이용해주셔서 감사합니다");
+				cheack = false;
+				
+			}//switch문 끝
+			
+			
 		
+			
+			
+		}//while문끝
+			//
 		
 //		서정원--------------------
 //		총 이용 횟수
@@ -109,5 +134,6 @@ public class Ex01 {
 //		평균요금
 //		
 		
-	}
+	
+}
 }
