@@ -34,6 +34,9 @@ public class Ex01 {
 		int s_count =0; // 지하철 이용횟수
 		int age = 0; //나이 
 		String sAge = ""; //아동, 청소년, 성인 저장할 변수
+		int mileageIndex = 0; //마일리지의 탑승 순서를 알려주는 변수 
+		double mileageTotal = 0.0; //최종 마일리지 금액 
+		
 		
 		int total = 0; //총 요금 
 		double avg = 0; //평균 요금
@@ -41,6 +44,7 @@ public class Ex01 {
 //		배열 선언 
 		int BUS[] = new int [1000]; //버스
 		int SUBWAY[] = new int[1000]; //지하철 
+		int mileageCount [] = new int[1000]; // 마일리지 : 탑승 순서대로 요금 저장 배열 
 		
 		
 //		정현주---------------------------------------
@@ -75,7 +79,7 @@ public class Ex01 {
 //		- 버스일때()
 //		첫 사용 시 첫 번째 배열에 저장
 		
-		boolean cheack = true;
+		boolean cheack = true;                       
 		while(cheack) {//while문 시작
 			System.out.println("대중교통 선택");
 			System.out.println("1. 버스");
@@ -92,6 +96,9 @@ public class Ex01 {
 			}else if(sAge.equals("성인")){
 				BUS[b_count] = BUS_PRICE;
 			}
+				
+				mileageCount[mileageIndex] = BUS[b_count]; //탄 순서대로 버스 요금 저장 
+				mileageIndex++;
 				b_count++;
 				break;
 		
@@ -108,22 +115,19 @@ public class Ex01 {
 			}else if(sAge.equals("성인")){
 				SUBWAY[s_count] = SUBWAY_PRICE;
 			}
+				mileageCount[mileageIndex] = SUBWAY[s_count]; // 탄 순서대로 지하철 요금 저장 
+				mileageIndex++; 
 				s_count++;
-				
 				
 				break;
 			default : 
 				System.out.println("이용해주셔서 감사합니다");
 				cheack = false;
 				
-			}//switch문 끝
-			
+			}//switch문 
+		}//while문끝
 			
 		
-			
-			
-		}//while문끝
-			//
 		
 //		서정원--------------------
 		System.out.println("지하철 이용횟수: "+s_count);
@@ -139,7 +143,7 @@ public class Ex01 {
 //		평균요금
 //			
 	      // 김진옥 
-	    int b_total = 0;
+	    int b_total = 0; // 총요금 
 		// 반복문을 사용해서 값을 꺼내고 요금 토탈값 구하기0.
 		  for (int i = 0 ; i <= s_count-1 ; i++) {
 		     
@@ -175,5 +179,29 @@ public class Ex01 {
 		
 		
 	
+//		이해준--------------------
+//		마일리지 
+	      // 마일리지의 구간 정하기 
+	      int mileagenum1=mileageIndex/10;  // 마일리지의 할인구간을 구하기 위한 몫 구하기 
+	      int mileagenum2 =mileagenum1 *10; // 마일리지 할인 구간 
+	      
+	      //구간 금액 누적합 
+	      for(int i =0; i <mileagenum2; i++) { // 마일리지 배열에 저장된 길이 
+	    	  mileageTotal +=mileageCount[i];
+	    	  
+	    	  
+	      }
+	      //0.5 퍼센트 할인율 적용 
+	      double mileage05 = mileageTotal * 0.005;
+	      System.out.println("0.5퍼센트 할인 : " + mileage05);
+	      
+	      //0.1 퍼센트 할인율 적용
+	      double mileage01 = total*0.001;
+	      System.out.println("0.1퍼센트 할인 : " + mileage01);
+	      
+	      mileageTotal = mileage05+mileage01;
+	      //총 마일리지
+	      System.out.printf("마일리지 금액 : %.0f\n", mileageTotal);
 }
 }
+
