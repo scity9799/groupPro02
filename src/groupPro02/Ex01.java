@@ -81,12 +81,15 @@ public class Ex01 {
 		
 		boolean cheack = true;                       
 		while(cheack) {// while문 시작
-			System.out.println("대중교통 선택");
-			System.out.println("1. 버스");
-			System.out.println("2. 지하철");
-			System.out.println("3. 정보창");
-			System.out.println("그 외 입력시 종료");
-			System.out.println("번호 입력 : ");
+			System.out.println(" ===대중교통 선택=== ");
+			System.out.println("|_______________|");
+			System.out.println("|1. 버스		|");
+			System.out.println("|2. 지하철	|");
+			System.out.println("|3. 정보창	|");
+			System.out.println("|그 외 입력시 종료	|");
+			System.out.println("|_______________|");
+			System.out.println("|번호 입력 : 	|");
+			System.out.println("|_______________|");
 			int choice = sc.nextInt();
 
 			switch(choice) {//switch문 시작
@@ -124,12 +127,14 @@ public class Ex01 {
 		//서정원------------------------------------------------------------
 			case 3:
 				while(choice!=0) {//switch문의 case3의 while문 시작
-					System.out.println("====현재까지 정보====");
-					System.out.println("확인하고 싶으신 정보를 고르세요");
-					System.out.println("1. 각 교통수단별 및 총 이용횟수");
-					System.out.println("2. 현재 사용자 정보");
-					System.out.println("3. 현재 각 교통수단별 금액");
-					System.out.println("0. 돌아가기");
+					System.out.println(" =======현재까지  정보========");
+					System.out.println("|※ 확인하고 싶으신 정보를 고르세요 |");
+					System.out.println("|_________________________|");
+					System.out.println("|1. 각 교통수단별 및 총 이용횟수  |");
+					System.out.println("|2. 현재 사용자 정보	 	  |");		 
+					System.out.println("|3. 현재 각 교통수단별 금액	  |");
+					System.out.println("|0. 돌아가기		  |");
+					System.out.println("|_________________________|");
 					choice = sc.nextInt();
 					switch(choice){
 					case 1: System.out.println("현재까지 버스는 "+b_count+"회 이용하셨으며 지하철은 "+s_count+"회 이용하셨습니다\n총 교통수단 이용 횟수는: "+count+"회 입니다");break;
@@ -182,7 +187,6 @@ public class Ex01 {
 //
 //		평균요금
 //			
-	      // 김진옥 
 		// 반복문을 사용해서 값을 꺼내고 요금 토탈값 구하기0.
 		  for (int i = 0 ; i <= s_count-1 ; i++) {
 		     
@@ -195,7 +199,7 @@ public class Ex01 {
 		      }
 		  
 	      // 1. 결제된 총 요금 출력
-	      // (앞선 반복문에서 total 변수에 요금이 계속 누적되었다고 가정)
+	     
 	      System.out.println("결제된 총 요금 : " + total + "원");
 
 	      // 2. 평균 요금 계산
@@ -228,17 +232,18 @@ public class Ex01 {
 	    	  mileageTotal +=mileageCount[i];
 	    	  
 	      }
-	      //0.5 퍼센트 할인율 적용 
+	      //10회 이상 사용시 0.5 퍼센트 마일리지 적립 
 	      double mileage05 = mileageTotal * 0.005;
-	      System.out.println("0.5퍼센트 할인 : " + mileage05);
+//	      System.out.println("0.5퍼센트 마일리지 : " + mileage05);
 	      
-	      //0.1 퍼센트 할인율 적용
+	      //사용마다 0.1 퍼센트 마일리지 적립
 	      double mileage01 = total*0.001;
-	      System.out.println("0.1퍼센트 할인 : " + mileage01);
+//	      System.out.println("0.1퍼센트 마일리지 : " + mileage01);
 	      
 	      mileageTotal = mileage05+mileage01;
 	      //총 마일리지
 	      System.out.printf("마일리지 금액 : %.0f\n", mileageTotal);
+	      sc.close();
 }
 }
 
