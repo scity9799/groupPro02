@@ -47,6 +47,10 @@ public class Ex01 {
 //		조건식 사용(if) => 12세 미만이면 아동
 //				12세 이상 19세 이하이면 청소년
 //				20세 이상이면 성인
+	      System.out.print("나이를 입력해주세요 : ");
+	      age = sc.nextInt();
+	      sc.nextLine();
+	      
 	      if (age >= 0) {
 	          if (age >= 0 && age < 12) {
 	             sAge = "아동";
