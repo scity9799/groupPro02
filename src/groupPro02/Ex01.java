@@ -38,7 +38,7 @@ public class Ex01 {
 		double avg = 0; //평균 요금
 		
 //		배열 선언 
-		int BUS [] = new int [1000]; //버스
+		int BUS[] = new int [1000]; //버스
 		int SUBWAY[] = new int[1000]; //지하철 
 		
 		
@@ -59,7 +59,20 @@ public class Ex01 {
 //		교통수단 별 이용횟수(switch)
 //		- 버스일때()
 //		첫 사용 시 첫 번째 배열에 저장
-		
+		while(true) {
+			System.out.println("탑승한 대중교통 : ");
+			String transpotation = sc.nextLine();
+			switch(transpotation) {
+			case "BUS" :
+				if(sAge.equals("아동")) {
+				BUS[b_count] = 0;
+			}else if (sAge.equals("청소년")){
+				BUS[b_count] = (int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE));
+			}else if(sAge.equals("성인")){
+				BUS[b_count] = BUS_PRICE;
+			}
+				b_count++;
+		}
 		
 //		김태우-------------------------------------
 //
