@@ -23,6 +23,8 @@ public class Ex01 {
 		
 		
 		Scanner sc= new Scanner (System.in);
+		Ex01 team02=new Ex01();
+		
 //		상수 선언 
 		final int BUS_PRICE = 1400; 	//버스요금 
 		final int SUBWAY_PRICE = 1500;//지하철 요금 
@@ -115,7 +117,8 @@ public class Ex01 {
 // 입력방식을 바꿔볼 수 있을까? 난 삼항연산자 쓰겠음 if문 switch문 다 위에서 썻으니...
 			case 2 :
 				SUBWAY[s_count] =
-				age >= 0 && age < 12 ? 0 ://12살이상일때가 거짓문밑에있음
+				
+				age < 12 ? 0 ://12살이상일때가 거짓문밑에있음
 					age >= 12 && age < 19 ? (int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE)) ://19살이상일때 거짓문밑에
 						age >= 19 ? SUBWAY_PRICE :SUBWAY_PRICE ;//참도 거짓도 결과는 정해져있음.ㅋ
 				
@@ -126,42 +129,39 @@ public class Ex01 {
 
 		//서정원------------------------------------------------------------
 			case 3:
-				while(choice!=0) {//switch문의 case3의 while문 시작
-					System.out.println(" =======현재까지  정보========");
-					System.out.println("|※ 확인하고 싶으신 정보를 고르세요 |");
-					System.out.println("|_________________________|");
-					System.out.println("|1. 각 교통수단별 및 총 이용횟수  |");
-					System.out.println("|2. 현재 사용자 정보	 	  |");		 
-					System.out.println("|3. 현재 각 교통수단별 금액	  |");
-					System.out.println("|0. 돌아가기		  |");
-					System.out.println("|_________________________|");
-					choice = sc.nextInt();
-					switch(choice){
-					case 1: System.out.println("현재까지 버스는 "+b_count+"회 이용하셨으며 지하철은 "+s_count+"회 이용하셨습니다\n총 교통수단 이용 횟수는: "+count+"회 입니다");break;
-					case 2:	if(sAge.equals("아동")) {System.out.println("현재 사용자는"+sAge+"이므로 교통비 무료 대상자입니다");}
-							else if (sAge.equals("청소년")){System.out.println("현재 사용자는 "+sAge+"이므로 교통비"+(DISCOUNT_RATE*100)+"% 할인 대상자 입니다.");}
-							else if(sAge.equals("성인")){System.out.println("현재 사용자는"+sAge+"이므로 나이 할인 대상자가 아닙니다.");}
-							break;
-					case 3: 
-						//김태우------------------------------------
-						//정원이가 작성한 코드
-						//System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
-						//이거 기반으로 해당 나이에 맞는 금액 알려주도록만 수정함
-						//나이대가 다르게 입력된채로 정보창에 들어왔는데 금액이 다 똑같이 알려주길래
-						//사용자의 정보에 맞는 금액 얼마인지 알수 있게끔만함
-						if(sAge.equals("아동")) {
-							System.out.println("현재 교통수단별 금액은\n버스: 0원\n지하철: 0원 으로 설정되어 있습니다");break;
-						}else if (sAge.equals("청소년")){
-							System.out.println("현재 교통수단별 금액은\n버스: "+(int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE))+"원\n"
-									+ "지하철: "+(int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE))+"원 으로 설정되어 있습니다");break;
-						}else if(sAge.equals("성인")){
-							System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
-						}
-					
-					case 0: System.out.println("정보창을 종료합니다");break;
-					default: System.out.println("잘못된 입력입니다 다시 입력해 주세요");break;
-					}
-				}//switch문의 case3의 while문 끝
+//				while(choice!=0) {//switch문의 case3의 while문 시작
+//					System.out.println(" =======현재까지  정보========");
+//					System.out.println("|※ 확인하고 싶으신 정보를 고르세요 |");
+//					System.out.println("|_________________________|");
+//					System.out.println("|1. 각 교통수단별 및 총 이용횟수  |");
+//					System.out.println("|2. 현재 사용자 정보	 	  |");		 
+//					System.out.println("|3. 현재 각 교통수단별 금액	  |");
+//					System.out.println("|0. 돌아가기		  |");
+//					System.out.println("|_________________________|");
+//					choice = sc.nextInt();
+//					switch(choice){
+//					case 1: System.out.println("현재까지 버스는 "+b_count+"회 이용하셨으며 지하철은 "+s_count+"회 이용하셨습니다\n총 교통수단 이용 횟수는: "+count+"회 입니다");break;
+//					case 2:	if(sAge.equals("아동")) {System.out.println("현재 사용자는"+sAge+"이므로 교통비 무료 대상자입니다");}
+//							else if (sAge.equals("청소년")){System.out.println("현재 사용자는 "+sAge+"이므로 교통비"+(DISCOUNT_RATE*100)+"% 할인 대상자 입니다.");}
+//							else if(sAge.equals("성인")){System.out.println("현재 사용자는"+sAge+"이므로 나이 할인 대상자가 아닙니다.");}
+//							break;
+//					case 3: 
+//						//김태우------------------------------------
+//						//정원
+//						if(sAge.equals("아동")) {
+//							System.out.println("현재 교통수단별 금액은\n버스: 0원\n지하철: 0원 으로 설정되어 있습니다");break;
+//						}else if (sAge.equals("청소년")){
+//							System.out.println("현재 교통수단별 금액은\n버스: "+(int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE))+"원\n"
+//									+ "지하철: "+(int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE))+"원 으로 설정되어 있습니다");break;
+//						}else if(sAge.equals("성인")){
+//							System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
+//						}
+//					
+//					case 0: System.out.println("정보창을 종료합니다");break;
+//					default: System.out.println("잘못된 입력입니다 다시 입력해 주세요");break;
+//					}
+//				}//switch문의 case3의 while문 끝
+				team02.Info(choice,sAge,BUS_PRICE,SUBWAY_PRICE,DISCOUNT_RATE,b_count,s_count,count);
 				break;
 		//김태우----------------------------------------
 		//while문 탈출할거얌.
@@ -176,10 +176,10 @@ public class Ex01 {
 		
 		
 //		서정원--------------------
-		System.out.println("지하철 이용횟수: "+s_count);
-		System.out.println("버스 이용횟수: "+b_count);
-		System.out.println("총 교통수단 이용횟수: "+count);
-		
+//		System.out.println("지하철 이용횟수: "+s_count);
+//		System.out.println("버스 이용횟수: "+b_count);
+//		System.out.println("총 교통수단 이용횟수: "+count);
+		team02.PrintTotal(s_count,b_count,count);
 		
 		
 //		김진옥------------------------
@@ -233,11 +233,11 @@ public class Ex01 {
 	    	  
 	      }
 	      //10회 이상 사용시 0.5 퍼센트 마일리지 적립 
-	      double mileage05 = mileageTotal * 0.005;
+	      double mileage05 = mileageTotal * 0.05;
 //	      System.out.println("0.5퍼센트 마일리지 : " + mileage05);
 	      
 	      //사용마다 0.1 퍼센트 마일리지 적립
-	      double mileage01 = total*0.001;
+	      double mileage01 = total*0.01;
 //	      System.out.println("0.1퍼센트 마일리지 : " + mileage01);
 	      
 	      mileageTotal = mileage05+mileage01;
@@ -245,5 +245,53 @@ public class Ex01 {
 	      System.out.printf("마일리지 금액 : %.0f\n", mileageTotal);
 	      sc.close();
 }
+	
+	
+	
+	
+//---------------서정원 메소드--------------------------------------------------------------------------
+	void Info(int choice,String sAge,int BUS_PRICE, int SUBWAY_PRICE, double DISCOUNT_RATE,int b_count,int s_count,int count) {
+		Scanner sc= new Scanner (System.in);
+		while(choice!=0) {//switch문의 case3의 while문 시작
+			System.out.println(" =======현재까지  정보========");
+			System.out.println("|※ 확인하고 싶으신 정보를 고르세요 |");
+			System.out.println("|_________________________|");
+			System.out.println("|1. 각 교통수단별 및 총 이용횟수  |");
+			System.out.println("|2. 현재 사용자 정보	 	  |");		 
+			System.out.println("|3. 현재 각 교통수단별 금액	  |");
+			System.out.println("|0. 돌아가기		  |");
+			System.out.println("|_________________________|");
+			choice = sc.nextInt();
+			switch(choice){
+			case 1: System.out.println("현재까지 버스는 "+b_count+"회 이용하셨으며 지하철은 "+s_count+"회 이용하셨습니다\n총 교통수단 이용 횟수는: "+count+"회 입니다");break;
+			case 2:	if(sAge.equals("아동")) {System.out.println("현재 사용자는"+sAge+"이므로 교통비 무료 대상자입니다");}
+					else if (sAge.equals("청소년")){System.out.println("현재 사용자는 "+sAge+"이므로 교통비"+(DISCOUNT_RATE*100)+"% 할인 대상자 입니다.");}
+					else if(sAge.equals("성인")){System.out.println("현재 사용자는"+sAge+"이므로 나이 할인 대상자가 아닙니다.");}
+					break;
+			case 3: 
+				//김태우------------------------------------
+				//정원
+				if(sAge.equals("아동")) {
+					System.out.println("현재 교통수단별 금액은\n버스: 0원\n지하철: 0원 으로 설정되어 있습니다");break;
+				}else if (sAge.equals("청소년")){
+					System.out.println("현재 교통수단별 금액은\n버스: "+(int)(BUS_PRICE - (BUS_PRICE * DISCOUNT_RATE))+"원\n"
+							+ "지하철: "+(int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE))+"원 으로 설정되어 있습니다");break;
+				}else if(sAge.equals("성인")){
+					System.out.println("현재 교통수단별 금액은\n버스: "+BUS_PRICE+"원\n지하철: "+SUBWAY_PRICE+"원 으로 설정되어 있습니다");break;
+				}
+			
+			case 0: System.out.println("정보창을 종료합니다");break;
+			default: System.out.println("잘못된 입력입니다 다시 입력해 주세요");break;
+			}
+		}//switch문의 case3의 while문 끝
+	}
+	void PrintTotal(int s_count, int b_count, int count) {
+		System.out.println("지하철 이용횟수: "+s_count);
+		System.out.println("버스 이용횟수: "+b_count);
+		System.out.println("총 교통수단 이용횟수: "+count);
+	}
+//---------------서정원 메소드 끝----------------------	--------------------------------------
+	
+	
 }
 
