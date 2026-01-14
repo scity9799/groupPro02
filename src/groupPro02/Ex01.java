@@ -232,13 +232,13 @@ public class Ex01 {
 	    	  mileageTotal +=mileageCount[i];
 	    	  
 	      }
-	      //10회 이상 사용시 0.5 퍼센트 마일리지 적립 
-	      double mileage05 = mileageTotal * 0.005;
-//	      System.out.println("0.5퍼센트 마일리지 : " + mileage05);
+	      //10회 이상 사용시 5% 마일리지 적립 
+	      double mileage05 = mileageTotal * 0.05;
+//	      System.out.println("5% 마일리지 : " + mileage05);
 	      
-	      //사용마다 0.1 퍼센트 마일리지 적립
-	      double mileage01 = total*0.001;
-//	      System.out.println("0.1퍼센트 마일리지 : " + mileage01);
+	      //사용마다 1% 마일리지 적립
+	      double mileage01 = total*0.01;
+//	      System.out.println("1% 마일리지 : " + mileage01);
 	      
 	      mileageTotal = mileage05+mileage01;
 	      //총 마일리지
