@@ -22,6 +22,7 @@ public class Ex01 {
 				
 		Scanner sc= new Scanner (System.in);
 		Ex01 team02=new Ex01();
+		Ex02 ex02 = new Ex02();
 		
 //		상수 선언 
 		final int BUS_PRICE = 1400; 	//버스요금 
@@ -111,12 +112,7 @@ public class Ex01 {
 //		- 지하철일때()
 
 			case 2 :
-				SUBWAY[s_count] =
-				age < 12 ? 0 ://12살이상일때가 거짓문밑에있음
-				age >= 12 && age < 19 ? (int)(SUBWAY_PRICE * (1 - DISCOUNT_RATE)) ://19살이상일때 거짓문밑에
-				age >= 19 ? SUBWAY_PRICE :SUBWAY_PRICE ;//참도 거짓도 결과는 정해져있음.ㅋ
-				
-				mileageCount[mileageIndex] = SUBWAY[s_count]; // 탄 순서대로 지하철 요금 저장 
+				ex02.subway(sAge, SUBWAY_PRICE, DISCOUNT_RATE, mileageCount, mileageIndex, s_count, SUBWAY);
 				mileageIndex++; 
 				s_count++;
 				break;
@@ -280,4 +276,3 @@ public class Ex01 {
 	
 	
 	}
-
