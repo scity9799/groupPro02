@@ -21,6 +21,19 @@ public class Lhj {
 		 	
 //	        
 	}
+	
+	public static void main(String[] args) {
+//		Lhj ex02 = new Lhj(); // 객체 생성 
+//		switch(choice) {//switch문 시작
+//		case 1 :
+//			BUS[b_count] =ex02.busRide(age, BUS_PRICE, DISCOUNT_RATE, BUS, b_count, mileageCount, mileageIndex);
+//			// CASE1번인경우 버스 요금을 메소드로 가서 계산 후 가격을 반환 
+//			mileageCount[mileageIndex] = BUS[b_count]; //탄 순서대로 버스 요금 저장 
+//			mileageIndex++;
+//			b_count++;
+//			break;
+//		
+	}
 
+	}
 
-}
