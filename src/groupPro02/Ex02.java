@@ -14,6 +14,7 @@ public class Ex02 {
 		      }else {
 		         SUBWAY[s_count] = SUBWAY_PRICE;
 		      }	
+		      mileageCount[mileageIndex] = SUBWAY[s_count];
 	}
 	   //---------------------------------------------------------------------------
 	   
