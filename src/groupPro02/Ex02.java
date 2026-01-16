@@ -2,7 +2,7 @@ package groupPro02;
 
 import java.util.Scanner;
 
-//메소드용 파일
+//메소드용 파일 김진옥 개인 브랜치에 다시 올림
 
 public class Ex02 {
 	// 김진옥 메소드 시작----------------------
